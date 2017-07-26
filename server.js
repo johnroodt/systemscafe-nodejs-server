@@ -9,7 +9,7 @@ hbs.registerPartials(__dirname + '/views/partials');
 //key-value pair
 app.set('view engine', hbs);
 
-// next allows you to tell Express, when your function is done
+// next allows you to tell Express when your function is done
 app.use((req, res, next) => {
     var now = new Date().toString();
     var log = `${now}: ${req.method} ${req.url}`;

@@ -57,6 +57,15 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Current Projects',
+        projects: {'Melbourne': 'Twentieth Century Learning',
+                    'Hobart': 'Government Gaming',
+                    'Launceston': 'Design Conversation'}
+    });
+});
+
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Unable to handle request'

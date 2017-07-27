@@ -1,6 +1,9 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+/** 3000 is a common development port. Second parameter is optional
+  * CHanging it to variable so Heroku can set it, defaulting to 3000 for local dev. */
+const port = process.env.PORT || 3000;
 
 var app = express();
 // add support for partials
@@ -60,7 +63,6 @@ app.get('/bad', (req, res) => {
     });
 });
 
-// 3000 is a common development port. Second parameter is optional
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 });
